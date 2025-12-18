@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hackflow</title>
+
+<!-- Liquid Glass CSS -->
+<style>
+:root {
+  --glass-bg: rgba(255,255,255,0.15);
+  --glass-border: rgba(255,255,255,0.3);
+  --blur: blur(20px);
+}
+body {
+  margin:0;
+  font-family:-apple-system, system-ui;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color:white;
+}
+header {
+  text-align:center;
+  padding:20px;
+  font-size:24px;
+  font-weight:700;
+}
+nav {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-bottom:20px;
+}
+nav button {
+  padding:10px 20px;
+  border:none;
+  border-radius:16px;
+  background:var(--glass-bg);
+  backdrop-filter:var(--blur);
+  cursor:pointer;
+  color:white;
+  font-weight:600;
+}
+nav button.active {
+  border:1px solid var(--glass-border);
+}
+.container {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:16px;
+  padding:10px 20px;
+}
+.card {
+  backdrop-filter: var(--blur);
+  background: var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+  transition:transform .2s;
+}
+.card:hover { transform: scale(1.05); }
+.icon {
+  width:56px;
+  height:56px;
+  margin:0 auto 10px;
+  border-radius:14px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.9), rgba(255,255,255,0.2));
+  box-shadow: inset 0 1px 1px rgba(255,255,255,.8), 0 8px 20px rgba(0,0,0,.4);
+}
+</style>
+</head>
+<body>
+
+<header>Hackflow</header>
+<nav>
+  <button class="active" onclick="showTab('appstore')">App Store</button>
+  <button onclick="showTab('devhome')">Dev Home</button>
+</nav>
+
+<div id="appstore" class="container"></div>
+<div id="devhome" class="container" style="display:none;"></div>
+
+<script>
+// Example modules for App Store
+const modules = [
+  {name:"Network Tools", desc:"Web Clips + Shortcuts", icon:"", mobileconfig:"network.mobileconfig"},
+  {name:"Web Experiments", desc:"HTML/JS demos", icon:"", mobileconfig:"webexp.mobileconfig"}
+];
+
+// Dev Home sections
+const devSections = [
+  {name:"Dev Chat", desc:"Online chat placeholder", icon:"", link:"https://matrix.org"},
+  {name:"Help Chat", desc:"Guides & support", icon:"", link:"https://github.com"},
+  {name:"Web Playground", desc:"Run JS/HTML", icon:"", link:"https://jsfiddle.net/"},
+  {name:"iOS VSC", desc:"Code editor", icon:"", link:"https://monaco-editor-playground.netlify.app/"}
+];
+
+// Render function
+function renderCards(container, items) {
+  container.innerHTML = "";
+  items.forEach(item=>{
+    const card=document.createElement("div");
+    card.className="card";
+    const icon=document.createElement("div"); icon.className="icon";
+    const title=document.createElement("div"); title.textContent=item.name;
+    card.appendChild(icon); card.appendChild(title);
+    card.addEventListener("click",()=>{
+      if(item.mobileconfig) window.location.href=item.mobileconfig;
+      else if(item.link) window.open(item.link,"_blank");
+    });
+    container.appendChild(card);
+  });
+}
+
+// Tab logic
+function showTab(tab){
+  document.getElementById("appstore").style.display = tab==="appstore"?"grid":"none";
+  document.getElementById("devhome").style.display = tab==="devhome"?"grid":"none";
+  document.querySelectorAll("nav button").forEach(b=>b.classList.remove("active"));
+  event.target.classList.add("active");
+}
+
+// Initial render
+renderCards(document.getElementById("appstore"), modules);
+renderCards(document.getElementById("devhome"), devSections);
+</script>
+
+</body>
+</html>
