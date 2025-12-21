@@ -141,7 +141,7 @@ export default function Game2048() {
       currentGrid = rotateGrid(currentGrid);
     }
 
-    const [movedGrid, addedScore] = moveLeft(currentGrid);
+    let [movedGrid, addedScore] = moveLeft(currentGrid);
 
     for (let i = 0; i < (4 - rotations) % 4; i++) {
       movedGrid = rotateGrid(movedGrid as Grid);
