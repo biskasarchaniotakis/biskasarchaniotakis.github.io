@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
 "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -11,13 +11,13 @@
       <key>PayloadVersion</key>
       <integer>1</integer>
       <key>PayloadIdentifier</key>
-      <string>com.george.hackflow</string>
+      <string>com.george.hackflow.net-tools</string>
       <key>PayloadUUID</key>
       <string>11111111-2222-3333-4444-555555555555</string>
       <key>PayloadDisplayName</key>
-      <string>Hackflow</string>
+      <string>Network Tools</string>
       <key>Label</key>
-      <string>Hackflow</string>
+      <string>Network Tools</string>
       <key>URL</key>
       <string>https://hackflow-nu.vercel.app/modules/network-tools</string>
       <key>FullScreen</key>
@@ -33,10 +33,10 @@
   <key>PayloadVersion</key>
   <integer>1</integer>
   <key>PayloadIdentifier</key>
-  <string>com.george.profile.hackflow</string>
+  <string>com.george.hackflow.net-tools</string>
   <key>PayloadUUID</key>
   <string>AAAAAAAA-BBBB-CCCC-DDDD-EEEEEEEEEEEE</string>
   <key>PayloadDisplayName</key>
-  <string>Hackflow Installer</string>
+  <string>Network Tools</string>
 </dict>
 </plist>

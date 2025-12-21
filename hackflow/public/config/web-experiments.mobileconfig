@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.webClip.managed</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.george.hackflow.web-experiments</string>
+      <key>PayloadUUID</key>
+      <string>22222222-3333-4444-5555-666666666666</string>
+      <key>PayloadDisplayName</key>
+      <string>Web Experiments</string>
+      <key>Label</key>
+      <string>Web Experiments</string>
+      <key>URL</key>
+      <string>https://hackflow-nu.vercel.app/modules/web-experiments</string>
+      <key>FullScreen</key>
+      <true/>
+      <key>IsRemovable</key>
+      <true/>
+      <key>Precomposed</key>
+      <false/>
+    </dict>
+  </array>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+  <key>PayloadIdentifier</key>
+  <string>com.george.hackflow.web-experiments</string>
+  <key>PayloadUUID</key>
+  <string>BBBBBBBB-CCCC-DDDD-EEEE-FFFFFFFFFFFF</string>
+  <key>PayloadDisplayName</key>
+  <string>Web Experiments</string>
+</dict>
+</plist>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.webClip.managed</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.george.hackflow.shortcuts-launcher</string>
+      <key>PayloadUUID</key>
+      <string>33333333-4444-5555-6666-777777777777</string>
+      <key>PayloadDisplayName</key>
+      <string>Shortcuts Launcher</string>
+      <key>Label</key>
+      <string>Shortcuts Launcher</string>
+      <key>URL</key>
+      <string>https://hackflow-nu.vercel.app/modules/shortcuts-launcher</string>
+      <key>FullScreen</key>
+      <true/>
+      <key>IsRemovable</key>
+      <true/>
+      <key>Precomposed</key>
+      <false/>
+    </dict>
+  </array>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+  <key>PayloadIdentifier</key>
+  <string>com.george.hackflow.shortcuts-launcher</string>
+  <key>PayloadUUID</key>
+  <string>CCCCCCCC-DDDD-EEEE-FFFF-000000000000</string>
+  <key>PayloadDisplayName</key>
+  <string>Shortcuts Launcher</string>
+</dict>
+</plist>
