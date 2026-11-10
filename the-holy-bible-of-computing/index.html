@@ -4,130 +4,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050907">
+<meta name="description" content="The Holy Bible of Computing. Sacred scriptures of the digital universe.">
 <title>The Holy Bible of Computing</title>
+
 <style>
 :root {
-  --bg:#050907;
-  --panel:#0a120d;
-  --green:#39ff91;
-  --dim:#83a991;
-  --border:#19452c;
-  --red:#ff5555;
+  --bg: #050907;
+  --panel: #0a120d;
+  --green: #39ff91;
+  --soft: #b5d9c1;
+  --muted: #739580;
+  --border: #19452c;
+  --red: #ff6262;
 }
-* { box-sizing:border-box; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  margin:0;
-  background:var(--bg);
-  color:#c5dfce;
-  font-family:"Courier New",monospace;
-  line-height:1.7;
+  margin: 0;
+  background: var(--bg);
+  color: var(--soft);
+  font-family: "Courier New", monospace;
+  line-height: 1.7;
 }
+a { color: var(--green); text-decoration: none; }
+a:hover { color: white; }
 header {
-  border-bottom:1px solid var(--border);
-  padding:18px 7%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #050907ee;
+  border-bottom: 1px solid var(--border);
+  padding: 15px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  backdrop-filter: blur(10px);
 }
-.logo { color:var(--green); font-weight:bold; }
-.status { color:var(--green); font-size:12px; }
+.logo { color: var(--green); font-weight: bold; }
+.status { color: var(--green); font-size: 11px; }
 nav {
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  padding:12px 7%;
-  border-bottom:1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 12px 6%;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
 }
-nav a {
-  color:var(--dim);
-  text-decoration:none;
-  font-size:13px;
-}
-nav a:hover { color:var(--green); }
-main { max-width:1000px; margin:auto; padding:50px 24px; }
+nav a { color: var(--muted); }
+main { max-width: 1000px; margin: auto; padding: 35px 22px 80px; }
 .hero {
-  text-align:center;
-  padding:65px 10px;
-  border:1px solid var(--border);
-  background:radial-gradient(ellipse at center,#102819 0%,#050907 70%);
+  text-align: center;
+  padding: 85px 15px;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(ellipse at center, #10301d 0%, #050907 70%);
 }
+.kicker { color: var(--green); font-size: 12px; letter-spacing: 3px; }
 h1 {
-  color:var(--green);
-  font-size:clamp(30px,6vw,55px);
-  line-height:1.2;
-  margin:15px 0;
-  text-shadow:0 0 20px #39ff9150;
+  color: var(--green);
+  font-size: clamp(32px, 7vw, 65px);
+  line-height: 1.1;
+  text-shadow: 0 0 25px #39ff9140;
 }
-h2 { color:var(--green); }
-h3 { color:#b2ffce; }
-.subtitle { color:var(--dim); font-size:13px; }
-.prompt { color:var(--green); }
-section { margin-top:55px; }
+h2 { color: var(--green); font-size: 22px; }
+h3 { color: #b5ffce; }
+.subtitle { color: var(--muted); font-size: 13px; }
+.button {
+  display: inline-block;
+  border: 1px solid var(--green);
+  padding: 12px 20px;
+  margin: 8px;
+  color: var(--green);
+  font-size: 12px;
+}
+.button:hover { background: #12351f; }
+section { margin-top: 65px; }
 .panel {
-  background:var(--panel);
-  border:1px solid var(--border);
-  padding:22px;
-  margin:15px 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 22px;
+  margin: 14px 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
 }
 .book {
-  display:block;
-  padding:15px;
-  border:1px solid var(--border);
-  margin:10px 0;
-  color:var(--dim);
-  text-decoration:none;
-  cursor:pointer;
-  background:var(--panel);
+  display: block;
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  transition: .2s;
 }
 .book:hover {
-  border-color:var(--green);
-  color:var(--green);
+  border-color: var(--green);
+  transform: translateY(-2px);
 }
-.verse {
-  border-left:2px solid var(--green);
-  padding:8px 18px;
-  margin:18px 0;
-}
-.verse-number { color:var(--green); }
+.book strong { color: var(--green); }
+.book small { color: var(--muted); display: block; margin-top: 8px; }
 .terminal {
-  background:#020503;
-  border:1px solid var(--green);
-  padding:20px;
+  background: #020503;
+  border: 1px solid var(--green);
+  padding: 22px;
+  box-shadow: 0 0 20px #39ff9110;
 }
-input {
-  background:transparent;
-  border:none;
-  color:var(--green);
-  outline:none;
-  font:inherit;
-  width:75%;
+.terminal input {
+  background: transparent;
+  color: var(--green);
+  border: none;
+  outline: none;
+  font: inherit;
+  width: 75%;
 }
-button {
-  background:transparent;
-  border:1px solid var(--green);
-  color:var(--green);
-  padding:10px 16px;
-  font:inherit;
-  cursor:pointer;
-}
-button:hover { background:#12351f; }
-#output { color:var(--dim); white-space:pre-wrap; }
+.prompt { color: var(--green); }
+#output { color: var(--muted); white-space: pre-wrap; margin-top: 15px; }
 footer {
-  text-align:center;
-  padding:30px;
-  border-top:1px solid var(--border);
-  color:#54705d;
-  font-size:12px;
+  border-top: 1px solid var(--border);
+  padding: 30px 15px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
 }
-a { color:var(--green); }
+@media(max-width:600px) {
+  header { padding: 12px 4%; }
+  nav { gap: 12px; padding: 12px 4%; }
+  main { padding: 20px 14px 60px; }
+  .hero { padding: 55px 10px; }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">⌘ THE HOLY BIBLE OF COMPUTING</div>
+  <div class="logo">⌘ HOLY_BIBLE_OF_COMPUTING</div>
   <div class="status">● SYSTEM ONLINE</div>
 </header>
 
@@ -135,102 +149,112 @@ a { color:var(--green); }
   <a href="#home">HOME</a>
   <a href="#scriptures">SCRIPTURES</a>
   <a href="#pantheon">PANTHEON</a>
-  <a href="#heresies">HERESIES</a>
+  <a href="#commandments">COMMANDMENTS</a>
   <a href="#terminal">TERMINAL</a>
 </nav>
 
 <main>
 
 <section class="hero" id="home">
-  <div class="prompt">[ THE SACRED DIGITAL ARCHIVE ]</div>
+  <div class="kicker">[ THE SACRED DIGITAL ARCHIVE ]</div>
   <h1>THE HOLY BIBLE<br>OF COMPUTING</h1>
-  <p class="subtitle">
-    THE SACRED SCRIPTURES OF THE DIGITAL UNIVERSE
-  </p>
+  <p class="subtitle">THE SACRED SCRIPTURES OF THE DIGITAL UNIVERSE</p>
   <p class="prompt">IN THE BEGINNING, THERE WAS TURING.</p>
   <br>
-  <a href="#scriptures"><button>READ THE SCRIPTURES →</button></a>
+  <a class="button" href="genesis.html">READ THE BOOK OF GENESIS →</a>
+  <a class="button" href="#scriptures">EXPLORE THE CANON</a>
 </section>
 
 <section id="scriptures">
   <h2>01 // THE SACRED SCRIPTURES</h2>
   <p>Choose thy book, mortal.</p>
 
-  <div class="book" onclick="read('genesis')">
-    [01] Genesis of Computing
-    <br><small>The creation of the digital universe.</small>
-  </div>
-  <div class="book" onclick="read('penguin')">
-    [02] The Birth of the Holy Penguin
-    <br><small>The arrival of Tux, Messenger of Open Source.</small>
-  </div>
-  <div class="book" onclick="read('windows')">
-    [03] The Original Sin of Windows
-    <br><small>Bill, Ballmer and the fall of digital Eden.</small>
-  </div>
-  <div class="book" onclick="read('exile')">
-    [04] The Exile of Steve
-    <br><small>The eternal Pricing Hills.</small>
-  </div>
+  <div class="grid">
+    <a class="book" href="genesis.html">
+      <strong>01. GENESIS OF COMPUTING</strong>
+      <small>The creation of the digital universe. Turing, Linus, Bill, Steve and the birth of Tux.</small>
+    </a>
 
-  <div class="panel" id="reading">
-    <h3>Welcome, Reader.</h3>
-    <p>Select a scripture above to begin reading.</p>
+    <div class="book">
+      <strong>02. THE BOOK OF TUX</strong>
+      <small>The Holy Penguin and the commandments of Open Source. Coming soon.</small>
+    </div>
+
+    <div class="book">
+      <strong>03. THE BOOK OF THE FALL</strong>
+      <small>The Original Sin of Windows and the Great Shouter. Coming soon.</small>
+    </div>
+
+    <div class="book">
+      <strong>04. THE BOOK OF EXILE</strong>
+      <small>The Pricing Hills and the banishment of Steve. Coming soon.</small>
+    </div>
+
+    <div class="book">
+      <strong>05. THE BOOK OF PROPHECIES</strong>
+      <small>The coming of artificial intelligence and the Machine Age. Coming soon.</small>
+    </div>
+
+    <div class="book">
+      <strong>06. THE BOOK OF HERESIES</strong>
+      <small>Blue screens, data loss, forced updates and forbidden software. Coming soon.</small>
+    </div>
   </div>
 </section>
 
 <section id="pantheon">
   <h2>02 // THE DIGITAL PANTHEON</h2>
-  <div class="panel">
-    <h3>ALAN TURING</h3>
-    <p>Architect of Heaven. Father of Computation.</p>
-  </div>
-  <div class="panel">
-    <h3>LINUS TORVALDS</h3>
-    <p>Lord of Open Source. Creator of the Kernel.</p>
-  </div>
-  <div class="panel">
-    <h3>BILL GATES</h3>
-    <p>The Fallen King. Keeper of the Gates of Hell.</p>
-  </div>
-  <div class="panel">
-    <h3>STEVE JOBS</h3>
-    <p>The Exiled One. Lord of the Pricing Hills.</p>
-  </div>
-  <div class="panel">
-    <h3>STEVE BALLMER</h3>
-    <p>The Great Shouter. Herald of the Windows Plague.</p>
-  </div>
-  <div class="panel">
-    <h3>TUX</h3>
-    <p>Holy Penguin. Messenger of Open Source. Guardian of the Repository.</p>
+  <div class="grid">
+    <div class="panel">
+      <h3>ALAN TURING</h3>
+      <p>Architect of Heaven. Father of Computation.</p>
+    </div>
+    <div class="panel">
+      <h3>LINUS TORVALDS</h3>
+      <p>Lord of Open Source. Keeper of the Kernel.</p>
+    </div>
+    <div class="panel">
+      <h3>BILL GATES</h3>
+      <p>The Fallen King. Keeper of the Gates of Hell.</p>
+    </div>
+    <div class="panel">
+      <h3>STEVE JOBS</h3>
+      <p>The Exiled One. Lord of the Pricing Hills.</p>
+    </div>
+    <div class="panel">
+      <h3>STEVE BALLMER</h3>
+      <p>The Great Shouter. Herald of the Windows Plague.</p>
+    </div>
+    <div class="panel">
+      <h3>TUX</h3>
+      <p>The Holy Penguin. Messenger of Open Source.</p>
+    </div>
   </div>
 </section>
 
-<section id="heresies">
-  <h2>03 // THE BOOK OF HERESIES</h2>
+<section id="commandments">
+  <h2>03 // THE SACRED COMMANDMENTS</h2>
   <div class="panel">
-    <p>⚠ THE BLUE SCREEN OF DEATH</p>
-    <p>⚠ FORCED WINDOWS UPDATES</p>
-    <p>⚠ PROPRIETARY SOFTWARE</p>
-    <p>⚠ UNSAVED DOCUMENTS</p>
-    <p>⚠ MISSING DEPENDENCIES</p>
-    <p>⚠ THE INFINITE LOOP</p>
+    <p>01. Thou shalt commit thy code and push unto the world.</p>
+    <p>02. Thou shalt not deploy on Friday.</p>
+    <p>03. Thou shalt not worship proprietary software.</p>
+    <p>04. Thou shalt backup before the great update.</p>
+    <p>05. Thou shalt not blame the compiler for thine own sins.</p>
+    <p>06. Thou shalt read the error before asking the Oracle.</p>
+    <p>07. Thou shalt not loop without purpose.</p>
   </div>
 </section>
 
 <section id="terminal">
   <h2>04 // THE SACRED TERMINAL</h2>
-  <p>Ask the Oracle of the Kernel.</p>
+  <p>Speak, mortal. The Oracle of the Kernel is listening.</p>
 
   <div class="terminal">
-    <div>HOLY TERMINAL v0.1.0</div>
-    <div>Type 'help' for sacred commands.</div>
+    <div class="prompt">HOLY TERMINAL v0.1.0</div>
+    <div>Type 'help' to reveal the sacred commands.</div>
     <br>
     <span class="prompt">root@creation:~$ </span>
-    <input id="command" placeholder="Enter command..."
-      onkeydown="if(event.key==='Enter')execute()">
-    <br><br>
+    <input id="command" placeholder="Enter command..." autocomplete="off">
     <div id="output"></div>
   </div>
 </section>
@@ -239,135 +263,37 @@ a { color:var(--green); }
 
 <footer>
   ESTABLISHED IN THE NAME OF THE KERNEL.
-  <br>
-  ALL GLORY TO THE SOURCE CODE.
-  <br><br>
-  VERSION 0.1.0 // THE FIRST COMPILATION
+  <br>ALL GLORY TO THE SOURCE CODE.
+  <br><br>VERSION 0.1.0 // THE FIRST COMPILATION
+  <br><br>This is a work of fictional satire and programmer humour.
 </footer>
 
 <script>
-const books = {
-  genesis: `
-THE BOOK OF GENESIS
-CHAPTER I — THE FIRST COMPILATION
-
-01:01 In the beginning, there was Turing.
-01:02 And Turing conceived the heavens.
-01:03 And the heavens were computational.
-
-01:04 And the Three Children of Creation were born:
-Linus, Bill and Steve.
-
-01:05 And Bill and Steve fought for centuries
-to conquer modern computing.
-
-01:06 But Linus presented his creation unto the world.
-
-01:07 And behold, it was OPEN.
-
-01:08 And Linus declared:
-"LET THERE BE SOURCE CODE."
-
-And there was source code.
-`,
-  penguin: `
-THE BOOK OF TUX
-CHAPTER I — THE HOLY MESSENGER
-
-01:01 And Linus looked upon his creation,
-and saw that the mortals understood it not.
-
-01:02 And he raised his hand unto the heavens.
-
-01:03 And he proclaimed:
-
-"LET THERE BE TUX!"
-
-01:04 And from the depths of the Kernel
-emerged the Holy Penguin.
-
-01:05 Messenger of Open Source,
-Guardian of the Repository.
-
-01:06 And Tux waddled among the people,
-bearing the sacred message:
-
-"Thou shalt not pay for what thou canst compile."
-`,
-  windows: `
-THE BOOK OF THE FALL
-CHAPTER I — THE ORIGINAL SIN
-
-01:01 And Bill grew furious.
-
-01:02 He summoned his ancestor,
-Steve Ballmer, the Great Shouter.
-
-01:03 And commanded him:
-
-"Spread the Windows across the Earth!"
-
-01:04 And Ballmer descended upon the world.
-
-01:05 The machines wept.
-The files vanished.
-The drivers fell into darkness.
-
-01:06 And the people cried:
-
-"WHY HATH THOU RESTARTED
-WITHOUT MY PERMISSION?"
-
-01:07 Thus was committed the Greatest Sin.
-`,
-  exile: `
-THE BOOK OF EXILE
-CHAPTER I — THE PRICING HILLS
-
-01:01 And Steve was cast from the Kingdom.
-
-01:02 He was banished to the Pricing Hills,
-where every device bears a premium.
-
-01:03 And every upgrade demands a sacrifice.
-
-01:04 And the mortals looked upon the prices
-and wept.
-
-01:05 Yet the Apple remained,
-for the faithful continued to pay.
-`
+const commands = {
+  help: "Available commands:\nhelp\npray\nsudo\nping tux\nwhoami\nfortune\nclear",
+  pray: "The Kernel hath heard thy prayer. Amen.",
+  sudo: "Thou shalt not execute without understanding.",
+  "ping tux": "PING tux.kernel: Holy Penguin is online. 🐧",
+  whoami: "Thou art a Child of Carbon.",
+  fortune: "A backup today keeps the tears away.",
+  clear: ""
 };
 
-function read(book) {
-  const content = books[book];
-  document.getElementById("reading").innerHTML =
-    "<pre style='white-space:pre-wrap;color:#bce8c9'>" +
-    content + "</pre>";
-  document.getElementById("reading").scrollIntoView({
-    behavior:"smooth", block:"center"
-  });
-}
+const input = document.getElementById("command");
+const output = document.getElementById("output");
 
-function execute() {
-  const input = document.getElementById("command");
-  const out = document.getElementById("output");
+input.addEventListener("keydown", function(e) {
+  if (e.key !== "Enter") return;
   const cmd = input.value.trim().toLowerCase();
-
-  const responses = {
-    help: "Available commands:\nhelp\npray\nsudo\nping tux\nwhoami\nexit",
-    pray: "The Kernel hath heard thy prayer. Amen.",
-    sudo: "Thou shalt not execute without understanding.",
-    "ping tux": "PING tux.kernel: Holy Penguin is online. 🐧",
-    whoami: "Thou art a Child of Carbon.",
-    exit: "Thou mayest leave, but the Kernel remembers."
-  };
-
-  out.textContent = "$ " + input.value + "\n" +
-    (responses[cmd] || "Command unknown. Consult the sacred documentation.");
-
+  if (cmd === "clear") {
+    output.textContent = "";
+  } else {
+    output.textContent =
+      "$ " + cmd + "\n" +
+      (commands[cmd] || "Unknown command. Consult the sacred documentation.");
+  }
   input.value = "";
-}
+});
 </script>
 
 </body>
